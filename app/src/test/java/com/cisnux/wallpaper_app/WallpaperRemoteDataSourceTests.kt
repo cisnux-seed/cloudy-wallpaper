@@ -34,7 +34,7 @@ class WallpaperApiServiceTests : BaseTest() {
     }
 
     @Test
-    fun api_service() {
+    fun wallpaper_api_service() {
         // arrange
         mockResponse("wallpapers.json")
         runBlocking {
