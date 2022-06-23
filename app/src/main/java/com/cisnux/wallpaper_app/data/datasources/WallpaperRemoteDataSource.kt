@@ -11,9 +11,9 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 private const val API_KEY = "563492ad6f91700001000001b4a006914d9640ea99e90f06a6a781a3"
+const val BASE_URL = "https://api.pexels.com"
 
 object WallpaperRemoteDataSource {
-    private const val BASE_URL = "https://api.pexels.com"
     private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
@@ -23,12 +23,12 @@ object WallpaperRemoteDataSource {
         .build()
 
     // delegate by lazy that means the value is computed only on first access.
-    val retrofitService: WallpaperService by lazy {
-        retrofit.create(WallpaperService::class.java)
+    val retrofitService: WallpaperApiService by lazy {
+        retrofit.create(WallpaperApiService::class.java)
     }
 }
 
-interface WallpaperService {
+interface WallpaperApiService {
     @Headers("Authorization: $API_KEY")
     @GET("/v1/search")
     suspend fun getWallpapersByKeyword(

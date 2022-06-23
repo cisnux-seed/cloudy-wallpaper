@@ -40,7 +40,7 @@ class WallpaperRepository(val context: Context) {
                     WallpaperRemoteDataSource.retrofitService.getWallpapersByKeyword(
                         query,
                         perPage
-                    ).photos
+                    ).wallpapers
                 )
             } catch (e: IOException) {
                 Either.Left(
