@@ -7,6 +7,8 @@ I implemented **Dynamic Color Material Design**
 ![dynamic](https://user-images.githubusercontent.com/68740152/175291780-66c6689a-face-486f-951f-88bca930b808.jpeg)
 
 Splash screen
+
+
 ![light_splash](https://user-images.githubusercontent.com/68740152/175305217-3f992876-6728-43ab-b047-ad0cb8326d8b.jpeg)
 
 ![dark_splash](https://user-images.githubusercontent.com/68740152/175305247-43a5e2cd-0c47-4694-9a73-5915de9b13a5.jpeg)
