@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Cloudy\nWallpaper</string>
+    <string name="home_activity_title">CloudyWallpaper</string>
+    <string name="search">Search Mountain, Art, Fashion</string>
+    <string name="nature">Nature</string>
+    <string name="latest_wallpapers">Latest Wallpapers</string>
+    <string name="view_all">View all</string>
+    <string name="neon">Neon</string>
+    <string name="accept_download_dialog">Accept</string>
+    <string name="title_download_dialog">Allow CloudyWallpaper to access your external storage</string>
+    <string name="message_download_dialog">To save wallpaper to your gallery we need to access external storage. Allow to access your external storage?</string>
+    <string name="title_no_internet">No Internet Connection</string>>
+    <string name="message_no_internet">You need to have internet connection to access this application. Press retry to restart</string>
+    <string name="retry_dialog">Retry</string>
+    <string name="rain_city">Rain City</string>
+    <string name="full_name">Fajra Risqulla</string>
+    <string name="email">fajrarisqulla@gmail.com</string>
+    <string name="phone_number">082181707745</string>
+    <string name="about_activity_title">About</string>
+    <string name="username">cisnux</string>
+    <string name="tools_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</string>
+    <string name="toast_message">Successfully save image to your gallery</string>
+    <string name="share_wallpaper_subject">Wallpaper</string>
+</resources>

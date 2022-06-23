@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="wallpaper"
+            type="com.cisnux.wallpaper_app.data.model.Wallpaper" />
+
+        <variable
+            name="viewModel"
+            type="com.cisnux.wallpaper_app.presentation.viewmodels.WallpaperViewModel" />
+
+        <variable
+            name="detailActivity"
+            type="com.cisnux.wallpaper_app.presentation.ui.DetailActivity" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.DetailActivity">
+
+        <ImageView
+            android:id="@+id/image_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/cardBackgroundColor"
+            android:importantForAccessibility="no"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:wallpaperDetailSrc="@{wallpaper.src.portrait}"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/detail_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fullscreen_margin_padding"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:navigationIcon="@drawable/ic_back_arrow"
+                app:navigationIconTint="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ImageView
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding_margin"
+            android:clickable="true"
+            android:importantForAccessibility="no"
+            android:onClick="@{()->viewModel.favoriteToggle()}"
+            app:drawableSrc="@{detailActivity.getFavoriteIcon(viewModel.isFavorite)}"
+            app:layout_constraintBottom_toTopOf="@+id/share"
+            app:layout_constraintEnd_toEndOf="@+id/share"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:src="@drawable/ic_favorite_border" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding_margin"
+            android:clickable="true"
+            android:importantForAccessibility="no"
+            android:onClick="@{()->detailActivity.shareWallpaper(wallpaper)}"
+            android:src="@drawable/ic_outline_share"
+            app:layout_constraintBottom_toTopOf="@+id/download"
+            app:layout_constraintEnd_toEndOf="@+id/download"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_padding_margin"
+            android:layout_marginBottom="@dimen/default_padding_margin"
+            android:clickable="true"
+            android:importantForAccessibility="no"
+            android:onClick="@{()->detailActivity.checkPermission()}"
+            android:src="@drawable/ic_outline_download"
+            app:layout_constraintBottom_toTopOf="@+id/photographer"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/photographer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/default_padding_margin"
+            android:text="@{wallpaper.photographer}"
+            android:textAppearance="?attr/textAppearanceTitleLarge"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/text_desc"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:text="Miles Morales" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/default_padding_margin"
+            android:paddingBottom="@dimen/fullscreen_margin_padding"
+            android:text="@{wallpaper.desc}"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/tools_desc" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

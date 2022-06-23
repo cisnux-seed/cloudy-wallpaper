@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cisnux.wallpaper_app.presentation.viewmodels.WallpaperViewModel" />
+    </data>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_colored="true"
+        app:status="@{viewModel.status}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/list_wallpaper_item" />
+
+            <include layout="@layout/list_wallpaper_item" />
+
+            <include layout="@layout/list_wallpaper_item" />
+
+            <include layout="@layout/list_wallpaper_item" />
+
+            <include layout="@layout/list_wallpaper_item" />
+
+            <include layout="@layout/list_wallpaper_item" />
+
+            <include layout="@layout/list_wallpaper_item" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</layout>

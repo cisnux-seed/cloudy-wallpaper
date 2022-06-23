@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding_margin">16dp</dimen>
+    <dimen name="app_title_margin">8dp</dimen>
+    <dimen name="list_divider">16dp</dimen>
+    <dimen name="caption_margin">8dp</dimen>
+    <dimen name="list_recycler_margin">12dp</dimen>
+    <dimen name="search_bar_padding_horizontal">16dp</dimen>
+    <dimen name="search_bar_padding_vertical">12dp</dimen>
+    <dimen name="subtitle_margin">12dp</dimen>
+    <dimen name="wallpaper_image_radius">10dp</dimen>
+    <dimen name="home_profile_radius">21dp</dimen>
+    <dimen name="about_profile_radius">40dp</dimen>
+    <dimen name="image_elevation">2dp</dimen>
+    <dimen name="wallpaper_stroke_width">4dp</dimen>
+    <dimen name="home_profile_stroke_width">2dp</dimen>
+    <dimen name="about_profile_stroke_width">4dp</dimen>
+    <dimen name="search_bar_radius">15dp</dimen>
+    <dimen name="recycler_padding">4dp</dimen>
+    <dimen name="app_bar_content_margin">8dp</dimen>
+    <dimen name="list_content_height">240dp</dimen>
+    <dimen name="list_content_width">130dp</dimen>
+    <dimen name="grid_content_width">175dp</dimen>
+    <dimen name="grid_content_height">260dp</dimen>
+    <dimen name="content_about_margin">20dp</dimen>
+    <dimen name="fullscreen_margin_padding">24dp</dimen>
+    <dimen name="grid_padding_bottom">64dp</dimen>
+</resources>

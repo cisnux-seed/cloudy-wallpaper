@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cisnux.wallpaper_app.presentation.viewmodels.WallpaperViewModel" />
+
+        <variable
+            name="homeViewActivity"
+            type="com.cisnux.wallpaper_app.presentation.ui.HomeActivity" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/default_padding_margin"
+        android:paddingTop="@dimen/default_padding_margin"
+        android:paddingEnd="0dp"
+        tools:context=".presentation.ui.HomeActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_padding_margin"
+            android:layout_marginBottom="@dimen/app_bar_content_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetStart="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/materialTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:gravity="top"
+                        android:text="@string/home_activity_title"
+                        android:textAppearance="?textAppearanceHeadlineLarge"
+                        android:textColor="?attr/colorOnBackground"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/profile_pict"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/profile_pict" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/profile_pict"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:clickable="true"
+                        android:clipToOutline="true"
+                        android:cropToPadding="false"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:importantForAccessibility="no"
+                        android:onClick="@{()->homeViewActivity.navigateToAbout(viewModel.user)}"
+                        android:scaleType="centerCrop"
+                        app:drawableSrc="@{viewModel.user.profilePict}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/HomeProfileImageView"
+                        app:strokeColor="?attr/colorSecondaryContainer"
+                        app:strokeWidth="@dimen/home_profile_stroke_width"
+                        tools:ignore="TouchTargetSizeCheck"
+                        tools:src="@drawable/profile_pict" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_title_margin"
+                        android:drawableEnd="@drawable/ic_search"
+                        android:onClick="@{()->homeViewActivity.navigateToSearch(false)}"
+                        android:text="@string/search"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:theme="@style/Widget.Material3.Button.SearchBar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_pict" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/nature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    android:text="@string/nature"
+                    android:textAppearance="?textAppearanceTitleLarge"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/include"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_padding_margin"
+                    android:clickable="true"
+                    android:importantForAccessibility="no"
+                    android:onClick="@{()->homeViewActivity.navigateToSearch(@string/nature, true)}"
+                    android:text="@string/view_all"
+                    android:textAllCaps="false"
+                    android:textAppearance="?textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintBottom_toBottomOf="@+id/nature"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/nature"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <include
+                    android:id="@+id/nature_shimmer"
+                    layout="@layout/list_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/list_recycler_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nature" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/nature_wallpaper_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/list_recycler_margin"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"
+                    android:visibility="gone"
+                    app:layoutManager="LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nature"
+                    app:listData="@{viewModel.natureWallpapers}"
+                    app:status="@{viewModel.status}"
+                    tools:itemCount="16"
+                    tools:listitem="@layout/list_wallpaper_item"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/neon_barrier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="nature_wallpaper_list, nature_shimmer" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/neon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    android:text="@string/neon"
+                    android:textAppearance="?textAppearanceTitleLarge"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/neon_barrier" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/include2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_padding_margin"
+                    android:importantForAccessibility="no"
+                    android:onClick="@{()->homeViewActivity.navigateToSearch(@string/neon, true)}"
+                    android:text="@string/view_all"
+                    android:textAllCaps="false"
+                    android:textAppearance="?textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintBottom_toBottomOf="@+id/neon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/neon"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <include
+                    android:id="@+id/neon_shimmer"
+                    layout="@layout/list_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/list_recycler_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/neon" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/neon_wallpaper_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/list_recycler_margin"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"
+                    android:visibility="gone"
+                    app:layoutManager="LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/neon"
+                    app:listData="@{viewModel.neonWallpapers}"
+                    app:status="@{viewModel.status}"
+                    tools:itemCount="16"
+                    tools:listitem="@layout/list_wallpaper_item"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/rain_city_barrier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="neon_wallpaper_list, neon_shimmer" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/rain_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    android:text="@string/rain_city"
+                    android:textAppearance="?textAppearanceTitleLarge"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rain_city_barrier"
+                    tools:ignore="TextContrastCheck" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/include3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_padding_margin"
+                    android:importantForAccessibility="no"
+                    android:onClick="@{()->homeViewActivity.navigateToSearch(@string/rain_city, true)}"
+                    android:text="@string/view_all"
+                    android:textAllCaps="false"
+                    android:textAppearance="?textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintBottom_toBottomOf="@+id/rain_city"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/rain_city"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <include
+                    android:id="@+id/rain_city_shimmer"
+                    layout="@layout/list_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/list_recycler_margin"
+                    android:layout_marginBottom="@dimen/default_padding_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rain_city" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rain_city_wallpaper_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/list_recycler_margin"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/default_padding_margin"
+                    android:scrollbars="none"
+                    android:visibility="gone"
+                    app:layoutManager="LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rain_city"
+                    app:listData="@{viewModel.rainCityWallpapers}"
+                    app:status="@{viewModel.status}"
+                    tools:itemCount="16"
+                    tools:listitem="@layout/list_wallpaper_item"
+                    tools:visibility="visible" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

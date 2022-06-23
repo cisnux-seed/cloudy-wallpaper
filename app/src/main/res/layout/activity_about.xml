@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.cisnux.wallpaper_app.data.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".presentation.ui.AboutActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/about_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:navigationIcon="@drawable/ic_back_arrow"
+                app:navigationIconTint="?attr/colorOnBackground"
+                app:title="@string/about_activity_title"
+                app:titleCentered="true"
+                app:titleTextAppearance="@style/TextAppearance.Material3.ActionBar.Title" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_pict"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/default_padding_margin"
+            android:layout_marginTop="@dimen/default_padding_margin"
+            android:clickable="true"
+            android:clipToOutline="true"
+            android:cropToPadding="false"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:drawableSrc="@{user.profilePict}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar_about"
+            app:shapeAppearanceOverlay="@style/AboutProfileImageView"
+            app:strokeColor="?attr/colorSecondaryContainer"
+            app:strokeWidth="@dimen/about_profile_stroke_width"
+            tools:src="@drawable/profile_pict" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/content_about_margin"
+            android:text="@{user.name}"
+            android:textAppearance="?attr/textAppearanceTitleLarge"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_pict"
+            app:layout_constraintStart_toEndOf="@+id/profile_pict"
+            app:layout_constraintTop_toTopOf="@+id/profile_pict"
+            tools:text="@string/full_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.username}"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintStart_toStartOf="@+id/full_name"
+            app:layout_constraintTop_toBottomOf="@+id/full_name"
+            tools:text="@string/username" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_about_margin"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_outline_email"
+            app:layout_constraintStart_toStartOf="@+id/profile_pict"
+            app:layout_constraintTop_toBottomOf="@+id/profile_pict" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/content_about_margin"
+            android:text="@{user.email}"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            tools:text="@string/email" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_about_margin"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_outline_phone"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.phoneNumber}"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/materialTextView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            tools:text="@string/phone_number" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
