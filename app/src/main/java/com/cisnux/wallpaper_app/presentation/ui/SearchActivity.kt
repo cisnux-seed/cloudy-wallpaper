@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.SearchView.OnQueryTextListener
 import androidx.activity.viewModels
-import androidx.core.view.marginTop
-import com.cisnux.wallpaper_app.R
 import com.cisnux.wallpaper_app.databinding.ActivitySearchBinding
 import com.cisnux.wallpaper_app.presentation.adapter.WallpapersAdapter
 import com.cisnux.wallpaper_app.presentation.viewmodels.WallpaperViewModel
