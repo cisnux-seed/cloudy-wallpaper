@@ -6,7 +6,7 @@ I implemented **Dynamic Color Materal Design**
 
 ![dynamic](https://user-images.githubusercontent.com/68740152/175291780-66c6689a-face-486f-951f-88bca930b808.jpeg)
 
-You can search whatever wallpapers you want, then you can downlad to your gallery and share your favorite wallpaper
+You can search whatever wallpapers you want, then you can save to your gallery and share your favorite wallpaper
 ![search](https://user-images.githubusercontent.com/68740152/175292848-7238e521-bbcc-4a98-9d3f-fbb9c4c73a42.jpeg)
 
 ![download](https://user-images.githubusercontent.com/68740152/175293725-310a4027-6fbd-4534-8b3a-f82c52adb839.jpeg)
