@@ -61,10 +61,12 @@ class WallpaperRepository(val context: Context) {
             try {
                 Either.Right(localDataSource.saveWallpaperToGallery(wallpaper))
             } catch (e: IOException) {
+                e.printStackTrace()
                 e.message?.let { message ->
                     Either.Left(IOFailure(null, message))
                 }
             } catch (e: RuntimeException) {
+                e.printStackTrace()
                 e.message?.let { message ->
                     Either.Left(RuntimeFailure(null, message))
                 }
