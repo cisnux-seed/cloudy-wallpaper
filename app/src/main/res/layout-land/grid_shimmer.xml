@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:shimmer_colored="true"
-        app:status="@{viewModel.status}">
+        app:updateStatus="@{viewModel.searchWallpapersStatus}">
 
         <GridLayout
             android:layout_width="wrap_content"

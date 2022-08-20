@@ -49,7 +49,7 @@
             layout="@layout/grid_shimmer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/default_padding_margin"
+            android:paddingTop="@dimen/default_padding_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_bar_search" />
@@ -58,7 +58,8 @@
             android:id="@+id/search_wallpaper_grid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/default_padding_margin"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/land_grid_padding_bottom"
             android:scrollbars="none"
             android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -67,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/app_bar_search"
             app:listData="@{viewModel.wallpapersByKeyword}"
             app:spanCount="3"
-            app:status="@{viewModel.status}"
+            app:status="@{viewModel.searchWallpapersStatus}"
             tools:itemCount="16"
             tools:listitem="@layout/grid_wallpaper_item"
             tools:visibility="visible" />

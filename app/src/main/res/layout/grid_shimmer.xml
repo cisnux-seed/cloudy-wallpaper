@@ -13,12 +13,16 @@
         android:id="@+id/grid_shimmer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:clipToPadding="true"
         app:shimmer_colored="true"
-        app:status="@{viewModel.status}">
+        app:updateStatus="@{viewModel.searchWallpapersStatus}">
 
         <GridLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipToPadding="true"
             android:columnCount="2">
 
             <include layout="@layout/grid_wallpaper_item" />

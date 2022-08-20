@@ -9,6 +9,7 @@ import com.cisnux.wallpaper_app.databinding.ActivitySearchBinding
 import com.cisnux.wallpaper_app.presentation.adapter.WallpapersAdapter
 import com.cisnux.wallpaper_app.presentation.viewmodels.WallpaperViewModel
 import com.cisnux.wallpaper_app.presentation.viewmodels.WallpaperViewModelFactory
+import com.cisnux.wallpaper_app.utils.hideKeyboard
 
 class SearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySearchBinding
@@ -39,6 +40,7 @@ class SearchActivity : AppCompatActivity() {
                 adapter = WallpapersAdapter(this@SearchActivity, true)
             }
             searchToolbar.setNavigationOnClickListener {
+                this@SearchActivity.hideKeyboard()
                 onBackPressed()
             }
             if (isCategory) {
@@ -48,17 +50,16 @@ class SearchActivity : AppCompatActivity() {
                 }
                 searchBar.visibility = View.GONE
             } else {
-                searchWallpaperShimmer.gridShimmer.visibility = View.GONE
                 searchBar.apply {
                     onActionViewExpanded()
                     setOnQueryTextListener(object : OnQueryTextListener {
                         override fun onQueryTextSubmit(query: String?): Boolean {
                             query?.let {
                                 searchWallpaperGrid.visibility = View.GONE
-                                searchWallpaperShimmer.gridShimmer.visibility = View.VISIBLE
+                                this@SearchActivity.hideKeyboard()
                                 wallpaperViewModel.searchWallpapers(query)
                             }
-                            return false
+                            return true
                         }
 
                         override fun onQueryTextChange(newText: String?): Boolean = false

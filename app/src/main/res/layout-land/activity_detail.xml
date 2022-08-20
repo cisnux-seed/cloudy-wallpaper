@@ -42,7 +42,7 @@
             android:id="@+id/detail_app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/fullscreen_margin_padding"
+            android:layout_marginTop="@dimen/fullscreen_margin_top"
             android:background="@android:color/transparent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -112,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/default_padding_margin"
-            android:paddingBottom="@dimen/fullscreen_margin_padding"
+            android:paddingBottom="@dimen/fullscreen_margin_top"
             android:text="@{wallpaper.desc}"
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textColor="@color/white"
@@ -120,6 +120,4 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:text="@string/tools_desc" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>

@@ -26,9 +26,6 @@ class HomeActivity : AppCompatActivity() {
             lifecycleOwner = this@HomeActivity
             viewModel = wallpaperViewModel
             homeViewActivity = this@HomeActivity
-            natureShimmer.viewModel = wallpaperViewModel
-            neonShimmer.viewModel = wallpaperViewModel
-            rainCityShimmer.viewModel = wallpaperViewModel
             natureWallpaperList.apply {
                 setHasFixedSize(true)
                 adapter = WallpapersAdapter(this@HomeActivity)

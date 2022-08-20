@@ -3,7 +3,9 @@
     <dimen name="default_padding_margin">16dp</dimen>
     <dimen name="app_title_margin">8dp</dimen>
     <dimen name="list_divider">16dp</dimen>
-    <dimen name="caption_margin">8dp</dimen>
+    <dimen name="grid_caption_margin">12dp</dimen>
+    <dimen name="list_caption_padding_horizontal">8dp</dimen>
+    <dimen name="list_caption_margin_vertical">10dp</dimen>
     <dimen name="list_recycler_margin">12dp</dimen>
     <dimen name="search_bar_padding_horizontal">16dp</dimen>
     <dimen name="search_bar_padding_vertical">12dp</dimen>
@@ -23,6 +25,8 @@
     <dimen name="grid_content_width">175dp</dimen>
     <dimen name="grid_content_height">260dp</dimen>
     <dimen name="content_about_margin">20dp</dimen>
-    <dimen name="fullscreen_margin_padding">24dp</dimen>
-    <dimen name="grid_padding_bottom">64dp</dimen>
+    <dimen name="fullscreen_margin_top">24dp</dimen>
+    <dimen name="fullscreen_margin_bottom">48dp</dimen>
+    <dimen name="portrait_grid_padding_bottom">64dp</dimen>
+    <dimen name="land_grid_padding_bottom">64dp</dimen>
 </resources>

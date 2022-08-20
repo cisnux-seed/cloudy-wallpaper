@@ -144,7 +144,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/list_recycler_margin"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nature" />
+                    app:layout_constraintTop_toBottomOf="@+id/nature"
+                    app:status="@{viewModel.natureWallpapersStatus}" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/nature_wallpaper_list"
@@ -159,7 +160,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/nature"
                     app:listData="@{viewModel.natureWallpapers}"
-                    app:status="@{viewModel.status}"
+                    app:status="@{viewModel.natureWallpapersStatus}"
                     tools:itemCount="16"
                     tools:listitem="@layout/list_wallpaper_item"
                     tools:visibility="visible" />
@@ -205,7 +206,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/list_recycler_margin"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/neon" />
+                    app:layout_constraintTop_toBottomOf="@+id/neon"
+                    app:status="@{viewModel.neonWallpapersStatus}" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/neon_wallpaper_list"
@@ -220,7 +222,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/neon"
                     app:listData="@{viewModel.neonWallpapers}"
-                    app:status="@{viewModel.status}"
+                    app:status="@{viewModel.neonWallpapersStatus}"
                     tools:itemCount="16"
                     tools:listitem="@layout/list_wallpaper_item"
                     tools:visibility="visible" />
@@ -267,9 +269,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/list_recycler_margin"
                     android:layout_marginBottom="@dimen/default_padding_margin"
+                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rain_city" />
+                    app:layout_constraintTop_toBottomOf="@+id/rain_city"
+                    app:status="@{viewModel.rainCityWallpapersStatus}" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rain_city_wallpaper_list"
@@ -285,7 +289,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rain_city"
                     app:listData="@{viewModel.rainCityWallpapers}"
-                    app:status="@{viewModel.status}"
+                    app:status="@{viewModel.rainCityWallpapersStatus}"
                     tools:itemCount="16"
                     tools:listitem="@layout/list_wallpaper_item"
                     tools:visibility="visible" />

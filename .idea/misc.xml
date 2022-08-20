@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/grid_shimmer.xml" value="0.15032894736842106" />
+        <entry key="..\:/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/list_shimmer.xml" value="0.15032894736842106" />
+        <entry key="..\:/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_home.xml" value="0.1305921052631579" />
+        <entry key="..\:/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_search.xml" value="0.1" />
+        <entry key="..\:/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout/grid_shimmer.xml" value="0.1305921052631579" />
+        <entry key="..\:/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout/list_shimmer.xml" value="0.1305921052631579" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/drawable/branding_image.xml" value="0.22" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/drawable/circular_loading.xml" value="0.1435" />
@@ -28,30 +35,30 @@
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/font/roboto.xml" value="0.1" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/font/roboto_thin.xml" value="0.23697916666666666" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/font/styles.xml" value="0.2359375" />
-        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/activity_detail.xml" value="0.12786885245901639" />
+        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/activity_detail.xml" value="0.1" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/activity_home.xml" value="0.21822916666666667" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/activity_home_view.xml" value="0.35765765765765767" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/activity_search.xml" value="0.1" />
-        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/grid_shimmer.xml" value="0.2917093142272262" />
+        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/grid_shimmer.xml" value="0.20759493670886076" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/list_shimmer.xml" value="0.27006802721088435" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-land/shimmer.xml" value="0.1" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout-v31/activity_home_view.xml" value="0.15416666666666667" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_about.xml" value="0.25" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_detail.xml" value="0.14" />
-        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_home.xml" value="0.10123456790123457" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_home_view.xml" value="0.25" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_search.xml" value="0.125" />
+        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_search.xml" value="0.33" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/content_about.xml" value="0.155078125" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/grid_item.xml" value="0.13689936536718042" />
-        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/grid_shimmer.xml" value="0.2" />
-        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/grid_wallpaper_item.xml" value="0.2" />
+        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/grid_shimmer.xml" value="0.11764705882352941" />
+        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/grid_wallpaper_item.xml" value="0.25" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/home_view_main.xml" value="0.33" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/list_item.xml" value="0.25" />
-        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/list_shimmer.xml" value="0.1" />
+        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/list_shimmer.xml" value="0.25" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/list_view_item.xml" value="0.5668202764976958" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/list_wallpaper.xml" value="0.16973065412569474" />
-        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/list_wallpaper_item.xml" value="0.1305921052631579" />
+        <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/list_wallpaper_item.xml" value="0.33" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/progress_bar.xml" value="0.13344594594594594" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/shimmer.xml" value="0.13991769547325103" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/layout/view_all.xml" value="0.33" />

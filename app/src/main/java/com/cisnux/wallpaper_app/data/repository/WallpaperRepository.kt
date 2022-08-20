@@ -1,18 +1,17 @@
 package com.cisnux.wallpaper_app.data.repository
 
-import android.content.ContentValues
 import android.content.Context
 import arrow.core.Either
 import com.cisnux.wallpaper_app.R
 import com.cisnux.wallpaper_app.data.datasources.WallpaperLocalDataSource
 import com.cisnux.wallpaper_app.data.datasources.WallpaperRemoteDataSource
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import com.cisnux.wallpaper_app.data.model.User
 import com.cisnux.wallpaper_app.data.model.Wallpaper
 import com.cisnux.wallpaper_app.utils.Failure
 import com.cisnux.wallpaper_app.utils.IOFailure
 import com.cisnux.wallpaper_app.utils.RuntimeFailure
+import kotlinx.coroutines.withContext
 import java.io.IOException
 import java.lang.RuntimeException
 
@@ -56,7 +55,7 @@ class WallpaperRepository(val context: Context) {
             }
         }
 
-    suspend fun downloadImage(wallpaper: Wallpaper): Either<Failure, ContentValues?>? =
+    suspend fun downloadImage(wallpaper: Wallpaper): Either<Failure, Unit>? =
         withContext(Dispatchers.IO) {
             try {
                 Either.Right(localDataSource.saveWallpaperToGallery(wallpaper))
@@ -72,5 +71,4 @@ class WallpaperRepository(val context: Context) {
                 }
             }
         }
-
 }
