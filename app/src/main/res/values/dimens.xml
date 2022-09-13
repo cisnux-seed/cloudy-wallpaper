@@ -22,7 +22,7 @@
     <dimen name="app_bar_content_margin">8dp</dimen>
     <dimen name="list_content_height">240dp</dimen>
     <dimen name="list_content_width">130dp</dimen>
-    <dimen name="grid_content_width">175dp</dimen>
+    <dimen name="grid_content_width">155dp</dimen>
     <dimen name="grid_content_height">260dp</dimen>
     <dimen name="content_about_margin">20dp</dimen>
     <dimen name="fullscreen_margin_top">24dp</dimen>

@@ -69,6 +69,9 @@
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/menu/layout_item.xml" value="0.3521739130434783" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Dicoding Android/wallpaper_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/fajra/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout/activity_detail.xml" value="0.1305921052631579" />
+        <entry key="..\:/Users/fajra/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout/grid_shimmer.xml" value="0.18" />
+        <entry key="..\:/Users/fajra/Apps Development/Dicoding Android/wallpaper_app/app/src/main/res/layout/grid_wallpaper_item.xml" value="0.1" />
       </map>
     </option>
   </component>
@@ -77,5 +80,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.18" />
+      </ProjectState>
+    </option>
   </component>
 </project>
