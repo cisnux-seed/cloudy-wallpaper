@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.cisnux.wallpaper_app"
         minSdk 31
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -22,6 +22,44 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "api"
+
+    productFlavors {
+        minApi31 {
+            dimension "api"
+            minSdkVersion 31
+
+            versionCode 20000 + android.defaultConfig.versionCode
+            versionNameSuffix "-minApi31"
+        }
+        minApi21 {
+            dimension "api"
+            minSdkVersion 21
+
+            versionCode 10000 + android.defaultConfig.versionCode
+            versionNameSuffix "-minApi21"
+        }
+    }
+
+    sourceSets {
+        minApi31 {
+            resources {
+                srcDirs 'src/main/res'
+            }
+            java {
+                srcDirs 'src/main/java'
+            }
+        }
+        minApi21 {
+            resources {
+                srcDirs 'src/minApi21/res'
+            }
+            java {
+                srcDirs 'src/minApi21/java'
+            }
         }
     }
     compileOptions {

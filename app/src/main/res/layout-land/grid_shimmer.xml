@@ -9,30 +9,44 @@
             type="com.cisnux.wallpaper_app.presentation.viewmodels.WallpaperViewModel" />
     </data>
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/grid_shimmer"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:shimmer_colored="true"
-        app:updateStatus="@{viewModel.searchWallpapersStatus}">
+        android:layout_height="match_parent">
 
-        <GridLayout
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/grid_shimmer"
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:columnCount="3">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shimmer_colored="true"
+            app:updateStatus="@{viewModel.searchWallpapersStatus}">
 
-            <include layout="@layout/grid_wallpaper_item" />
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="4">
 
-            <include layout="@layout/grid_wallpaper_item" />
+                <include layout="@layout/grid_wallpaper_item" />
 
-            <include layout="@layout/grid_wallpaper_item" />
+                <include layout="@layout/grid_wallpaper_item" />
 
-            <include layout="@layout/grid_wallpaper_item" />
+                <include layout="@layout/grid_wallpaper_item" />
 
-            <include layout="@layout/grid_wallpaper_item" />
+                <include layout="@layout/grid_wallpaper_item" />
 
-            <include layout="@layout/grid_wallpaper_item" />
-        </GridLayout>
-    </com.facebook.shimmer.ShimmerFrameLayout>
+                <include layout="@layout/grid_wallpaper_item" />
+
+                <include layout="@layout/grid_wallpaper_item" />
+
+                <include layout="@layout/grid_wallpaper_item" />
+
+                <include layout="@layout/grid_wallpaper_item" />
+            </GridLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>

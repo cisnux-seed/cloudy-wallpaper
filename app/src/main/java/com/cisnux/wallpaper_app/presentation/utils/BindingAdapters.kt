@@ -78,5 +78,10 @@ fun setStatus(shimmerFrameLayout: ShimmerFrameLayout, status: WallpaperApiStatus
     }
 }
 
-@BindingAdapter("drawableSrc")
-fun setDrawableSrc(imageView: ImageView, src: Int) = imageView.setImageResource(src)
+@BindingAdapter("drawableProfilePict")
+fun setDrawableProfilePict(imageView: ImageView, src: Int) = imageView.setImageBitmap(
+    decodeSampledBitmapFromResource(imageView.context.resources, src, 100, 100)
+)
+
+@BindingAdapter("drawableIcon")
+fun setDrawableIcon(imageView: ImageView, src: Int) = imageView.setImageResource(src)

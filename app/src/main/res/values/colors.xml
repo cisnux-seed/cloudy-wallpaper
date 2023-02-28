@@ -63,4 +63,5 @@
     <color name="dark_highlight_shimmer">#3f3f3f</color>
     <color name="black_filter">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="content_description_background">#59000000</color>
 </resources>

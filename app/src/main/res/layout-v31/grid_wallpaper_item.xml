@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gridWallpaper"
+            type="com.cisnux.wallpaper_app.data.model.Wallpaper" />
+
+        <variable
+            name="gridViewHolder"
+            type="com.cisnux.wallpaper_app.presentation.adapter.WallpapersAdapter.WallpapersViewHolder" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wallpaper_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{()->gridViewHolder.navigateToDetail(gridWallpaper)}">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_marginHorizontal="@dimen/default_padding_margin"
+            android:layout_marginBottom="@dimen/list_divider"
+            android:id="@+id/grid_wallpaper_image"
+            android:layout_width="@dimen/grid_content_width"
+            android:layout_height="@dimen/grid_content_height"
+            android:adjustViewBounds="true"
+            android:background="?attr/cardBackgroundColor"
+            android:clipToOutline="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:importantForAccessibility="no"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/WallpaperRoundedImageView"
+            app:strokeColor="?attr/colorPrimaryContainer"
+            app:strokeWidth="@dimen/wallpaper_stroke_width"
+            app:wallpaperItemSrc="@{gridWallpaper.src.portrait}"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView2"
+            android:layout_width="@dimen/grid_content_width"
+            android:layout_height="@dimen/grid_content_height"
+            android:layout_marginBottom="@dimen/grid_caption_margin"
+            android:gravity="bottom"
+            android:paddingHorizontal="@dimen/grid_caption_margin"
+            android:text="@{gridWallpaper.photographer}"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/grid_wallpaper_image"
+            app:layout_constraintEnd_toEndOf="@+id/grid_wallpaper_image"
+            app:layout_constraintStart_toStartOf="@+id/grid_wallpaper_image"
+            app:layout_constraintTop_toTopOf="@+id/grid_wallpaper_image"
+            tools:text="Peter B Parker" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.SplashScreen">
+
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="@dimen/product_image_size"
+        android:layout_height="@dimen/product_image_size"
+        android:contentDescription="@string/company_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/splash_icon" />
+
+    <ImageView
+        android:id="@+id/branding_image"
+        android:layout_width="@dimen/branding_image_width_size"
+        android:layout_height="@dimen/branding_image_height_size"
+        android:layout_marginBottom="@dimen/fullscreen_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/branding_image"
+        android:contentDescription="@string/branding_image" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

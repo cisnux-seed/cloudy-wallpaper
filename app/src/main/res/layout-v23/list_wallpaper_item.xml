@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listWallpaper"
+            type="com.cisnux.wallpaper_app.data.model.Wallpaper" />
+
+        <variable
+            name="listViewHolder"
+            type="com.cisnux.wallpaper_app.presentation.adapter.WallpapersAdapter.WallpapersViewHolder" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wallpaper_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="@{()->listViewHolder.navigateToDetail(listWallpaper)}"
+        android:focusable="true">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/list_wallpaper_image"
+            android:layout_width="@dimen/list_content_width"
+            android:layout_height="@dimen/list_content_height"
+            android:layout_marginEnd="@dimen/list_divider"
+            android:adjustViewBounds="true"
+            android:background="?attr/cardBackgroundColor"
+            android:foreground="?attr/selectableItemBackground"
+            android:importantForAccessibility="no"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/WallpaperRoundedImageView"
+            app:strokeColor="?attr/colorPrimaryContainer"
+            app:strokeWidth="@dimen/wallpaper_stroke_width"
+            app:wallpaperItemSrc="@{listWallpaper.src.portrait}"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView4"
+            android:layout_width="@dimen/list_content_width"
+            android:layout_height="@dimen/list_content_height"
+            android:layout_gravity="bottom"
+            android:paddingHorizontal="@dimen/list_caption_padding_horizontal"
+            android:layout_marginBottom="@dimen/list_caption_margin_vertical"
+            android:gravity="bottom"
+            android:text="@{listWallpaper.photographer}"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/wallpaper_card"
+            app:layout_constraintEnd_toEndOf="@+id/list_wallpaper_image"
+            app:layout_constraintStart_toStartOf="@+id/list_wallpaper_image"
+            app:layout_constraintTop_toTopOf="@id/wallpaper_card"
+            tools:text="Peter B Parker" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

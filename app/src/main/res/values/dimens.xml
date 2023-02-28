@@ -26,7 +26,15 @@
     <dimen name="grid_content_height">260dp</dimen>
     <dimen name="content_about_margin">20dp</dimen>
     <dimen name="fullscreen_margin_top">24dp</dimen>
-    <dimen name="fullscreen_margin_bottom">48dp</dimen>
+    <dimen name="fullscreen_margin_bottom">58dp</dimen>
     <dimen name="portrait_grid_padding_bottom">64dp</dimen>
     <dimen name="land_grid_padding_bottom">64dp</dimen>
+    <dimen name="grid_wallpaper_item_margin">32dp</dimen>
+    <dimen name="product_image_size">180dp</dimen>
+    <dimen name="branding_image_height_size">60dp</dimen>
+    <dimen name="branding_image_width_size">150dp</dimen>
+    <dimen name="home_padding_bottom">122dp</dimen>
+    <dimen name="width_content_description">370dp</dimen>
+    <dimen name="height_content_description">90dp</dimen>
+    <dimen name="margin_bottom_content_description">58dp</dimen>
 </resources>

@@ -42,17 +42,17 @@
             android:layout_marginStart="@dimen/default_padding_margin"
             android:layout_marginTop="@dimen/default_padding_margin"
             android:clickable="true"
-            android:clipToOutline="true"
             android:cropToPadding="false"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
-            app:drawableSrc="@{user.profilePict}"
+            app:drawableProfilePict="@{user.profilePict}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_bar_about"
             app:shapeAppearanceOverlay="@style/AboutProfileImageView"
             app:strokeColor="?attr/colorSecondaryContainer"
             app:strokeWidth="@dimen/about_profile_stroke_width"
-            tools:src="@drawable/profile_pict" />
+            tools:src="@drawable/profile_pict"
+            android:focusable="true" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/full_name"

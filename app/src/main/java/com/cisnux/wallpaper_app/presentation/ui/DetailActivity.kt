@@ -4,7 +4,9 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -39,22 +41,36 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onAttachedToWindow() {
         window.apply {
-            statusBarColor = Color.TRANSPARENT
-            navigationBarColor = Color.TRANSPARENT
-            setDecorFitsSystemWindows(false)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                statusBarColor = Color.TRANSPARENT
+                navigationBarColor = Color.TRANSPARENT
+                setDecorFitsSystemWindows(false)
+            } else {
+                @Suppress("DEPRECATION")
+                window.setFlags(
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                )
+            }
         }
         super.onAttachedToWindow()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        wallpaper = intent.getParcelableExtra(WALLPAPER)
+        wallpaper = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra(WALLPAPER, Wallpaper::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra(WALLPAPER)
+        }
         binding = ActivityDetailBinding.inflate(layoutInflater)
         binding.apply {
             lifecycleOwner = this@DetailActivity
             detailActivity = this@DetailActivity
             viewModel = wallpaperViewModel
             binding.detailToolbar.setNavigationOnClickListener {
+                @Suppress("DEPRECATION")
                 onBackPressed()
             }
             wallpaper = this@DetailActivity.wallpaper
@@ -67,28 +83,35 @@ class DetailActivity : AppCompatActivity() {
         if (!isFavorite) R.drawable.ic_favorite_border else R.drawable.ic_favorite
 
     fun checkPermission() {
-        when {
-            (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-            ) == PackageManager.PERMISSION_GRANTED) -> {
-                wallpaper?.let { wallpaper ->
-                    wallpaperViewModel.downloadImage(wallpaper)
-                    showDownloadMessage()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            when {
+                (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                ) == PackageManager.PERMISSION_GRANTED) -> {
+                    wallpaper?.let { wallpaper ->
+                        wallpaperViewModel.downloadImage(wallpaper)
+                        showDownloadMessage()
+                    }
+                }
+                shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE) -> {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle(resources.getString(R.string.title_download_dialog))
+                        .setMessage(resources.getString(R.string.message_download_dialog))
+                        .setCancelable(true)
+                        .setPositiveButton(resources.getString(R.string.accept_download_dialog)) { _, _ ->
+                            requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        }
+                        .show()
+                }
+                else -> {
+                    requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 }
             }
-            shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE) -> {
-                MaterialAlertDialogBuilder(this)
-                    .setTitle(resources.getString(R.string.title_download_dialog))
-                    .setMessage(resources.getString(R.string.message_download_dialog))
-                    .setCancelable(true)
-                    .setPositiveButton(resources.getString(R.string.accept_download_dialog)) { _, _ ->
-                        requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    }
-                    .show()
-            }
-            else -> {
-                requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        } else {
+            wallpaper?.let { wallpaper ->
+                wallpaperViewModel.downloadImage(wallpaper)
+                showDownloadMessage()
             }
         }
     }

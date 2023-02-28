@@ -38,7 +38,7 @@ class WallpaperViewModel(private val wallpaperRepository: WallpaperRepository) :
         const val NEON_KEYWORD = "neon"
         const val RAIN_CITY_KEYWORD = "rain city"
         const val HOME_PER_PAGE = 7
-        const val SEARCH_PER_PAGE = 26
+        const val SEARCH_PER_PAGE = 32
     }
 
     init {

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.CloudyWallpaper" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>
@@ -32,7 +32,6 @@
         <item name="cardBackgroundColor">?attr/shimmer_base_color</item>
         <item name="shimmer_highlight_color">@color/light_highlight_shimmer</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
-        <item name="android:windowSplashScreenBrandingImage">@drawable/branding_image</item>
         <item name="windowSplashScreenAnimationDuration">200</item>
         <!--typography-->
         <item name="textAppearanceDisplayLarge">@style/TextAppearance.Material3.DisplayLarge</item>
@@ -61,5 +60,32 @@
         </item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Material3.LargeComponent
         </item>
+    </style>
+
+    <style name="Widget.Material3.Button.SearchBar" parent="Widget.Material3.Button.ElevatedButton.Icon">
+        <item name="android:backgroundTint">?attr/colorPrimaryContainer</item>
+        <item name="cornerRadius">@dimen/search_bar_radius</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">@dimen/search_bar_padding_horizontal</item>
+        <item name="android:paddingVertical" tools:targetApi="o">@dimen/search_bar_padding_vertical</item>
+        <item name="android:paddingStart">@dimen/search_bar_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/search_bar_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/search_bar_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/search_bar_padding_vertical</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelLarge</item>
+    </style>
+
+    <style name="WallpaperRoundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/wallpaper_image_radius</item>
+    </style>
+
+    <style name="HomeProfileImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/home_profile_radius</item>
+    </style>
+
+    <style name="AboutProfileImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/about_profile_radius</item>
     </style>
 </resources>

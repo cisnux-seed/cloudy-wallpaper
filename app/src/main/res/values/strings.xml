@@ -21,4 +21,6 @@
     <string name="tools_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum</string>
     <string name="toast_message">Successfully save image to your gallery</string>
     <string name="share_wallpaper_subject">Wallpaper</string>
+    <string name="company_profile">Cloudy Wallpaper</string>
+    <string name="branding_image">from Cisnux</string>
 </resources>

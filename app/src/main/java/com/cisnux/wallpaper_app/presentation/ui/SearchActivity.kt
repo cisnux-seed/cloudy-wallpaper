@@ -41,6 +41,7 @@ class SearchActivity : AppCompatActivity() {
             }
             searchToolbar.setNavigationOnClickListener {
                 this@SearchActivity.hideKeyboard()
+                @Suppress("DEPRECATION")
                 onBackPressed()
             }
             if (isCategory) {
