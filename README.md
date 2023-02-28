@@ -1,6 +1,6 @@
 # CloudyWallpaper! 😁
-A wallpaper open source application. I built this app for study purpose, this app now also support **Android 5 (API 21)**.
-If you want to use **Dynamic Theme** feature, you need to have atleast **Android 12 (API 31)**.
+A wallpaper open-source application. I built this app for study purposes, and this app now also supports **Android 5 (API 21)**. 
+If you want to use the **Dynamic Theme** feature, you need to have at least **Android 12 (API 31)**.
 ![light_dyanmic](https://user-images.githubusercontent.com/68740152/175291642-7d4674a1-44b4-4f3d-ad90-4b8aab73de5a.jpeg)
 
 ![dynamic](https://user-images.githubusercontent.com/68740152/175291780-66c6689a-face-486f-951f-88bca930b808.jpeg)
