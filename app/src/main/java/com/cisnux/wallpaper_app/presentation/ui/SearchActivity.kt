@@ -52,6 +52,10 @@ class SearchActivity : AppCompatActivity() {
                 searchBar.visibility = View.GONE
             } else {
                 searchBar.apply {
+                    /**
+                     * call onOnViewExpanded to pop out search bar
+                     * after user navigate from [HomeActivity] to [SearchActivity]
+                     * */
                     onActionViewExpanded()
                     setOnQueryTextListener(object : OnQueryTextListener {
                         override fun onQueryTextSubmit(query: String?): Boolean {
