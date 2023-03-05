@@ -33,7 +33,7 @@ class WallpaperRepository(val context: Context) {
         query: String,
         perPage: Int = 20
     ): Either<Failure, List<Wallpaper>>? =
-        withContext(Dispatchers.IO) {
+        withContext(Dispatchers.Default) {
             try {
                 Either.Right(
                     WallpaperRemoteDataSource.retrofitService.getWallpapersByKeyword(

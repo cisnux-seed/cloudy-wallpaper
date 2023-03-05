@@ -51,7 +51,7 @@ class WallpaperViewModel(private val wallpaperRepository: WallpaperRepository) :
         _neonWallpapersStatus.value = WallpaperApiStatus.Loading
         _rainCityWallpapersStatus.value = WallpaperApiStatus.Loading
 
-        wallpaperRepository.run {
+        with(wallpaperRepository) {
             async {
                 getWallpapersByKeyword(NATURE_KEYWORD, HOME_PER_PAGE)
                     ?.fold({ natureFailure ->
@@ -83,6 +83,7 @@ class WallpaperViewModel(private val wallpaperRepository: WallpaperRepository) :
             }
         }
     }
+
 
     fun searchWallpapers(keyword: String) = viewModelScope.launch {
         _searchWallpapersStatus.value = WallpaperApiStatus.Loading
